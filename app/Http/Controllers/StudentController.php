@@ -31,4 +31,9 @@ class StudentController extends Controller
         Student::create($data);
         return redirect()->route('add.student');
     }
+
+    public function show($id){
+        $students = Student::findOrFail($id);
+        echo $students;
+    }
 }
